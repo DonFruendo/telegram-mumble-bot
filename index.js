@@ -102,8 +102,9 @@ var postConnectedUsersMessage = function(chatId) {
 var usersList = [];
 var onInit = function() {
   console.log('Mumble connection initialized');
-  usersList = mumbleClient.users().filter(function(user) {
-    return config.MUMBLE_USERLIST.indexOf(user) > -1;
+  usersList = mumbleClient.users();
+  usersList = usersList.filter(function(user) {
+    return config.MUMBLE_USERLIST.indexOf(user.name) > -1;
   };
   postConnectedUsersMessage(config.TELEGRAM_CHAT_ID);
 };
