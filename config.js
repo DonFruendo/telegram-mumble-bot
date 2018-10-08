@@ -8,6 +8,6 @@ config.TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 config.MUMBLE_URL = process.env.MUMBLE_URL;
 config.MUMBLE_USER = process.env.MUMBLE_USER;
 config.MUMBLE_PASSWORD = process.env.MUMBLE_PASSWORD;
-config.MUMBLE_USERLIST = process.env.MUMBLE_USERLIST;
+config.MUMBLE_USERLIST = process.env.MUMBLE_USERLIST.split(" ");
 
 module.exports = config;
