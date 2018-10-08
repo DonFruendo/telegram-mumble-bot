@@ -108,7 +108,9 @@ var onInit = function() {
 
 var onUserConnected = function(user) {
   console.log(user.name + ' connected');
-  usersList.push(user);
+  if (config.MUMBLE_USERLIST.indexOf(user) > -1) {
+    usersList.push(user);
+  }
   console.log('Current users list:');
   usersList.forEach(function(user) {
     console.log(user.name + '\n');
